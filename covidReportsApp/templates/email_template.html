@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <style>
+        /* Basic table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: yellow;
+        }
+        td:nth-child(5), th:nth-child(5) {
+            color: red;
+            font-weight:bold
+        }
+    </style>
+</head>
+<body>
+    <p>Hi,</p>
+    <p>Below is the covid report for countries:</p>
+    <p></p>
+    <table>
+        <thead>
+            <tr>
+                {% for header in data.headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data.rows %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>Thanks and Regards</p>
+    <p>Vivek Kumar</p>
+</body>
+</html>
